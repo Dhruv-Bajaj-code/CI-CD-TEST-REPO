@@ -39,7 +39,7 @@ jobs:
         run: docker build -t fastapi-app:latest .
 
       - name: Save Docker Image
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: /tmp/fastapi-app.tar
