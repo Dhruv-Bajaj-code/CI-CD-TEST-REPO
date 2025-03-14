@@ -54,7 +54,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docker-image
-          path: /tmp
+          path: .
 
       - name: Load Docker Image
         run: docker load -i /tmp/fastapi-app.tar
