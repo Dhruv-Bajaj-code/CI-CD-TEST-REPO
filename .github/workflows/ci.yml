@@ -36,7 +36,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t fastapi-app:latest .
+        run: |
+          docker build -t fastapi-app:latest .
+          docker save -o fastapi-app.tar fastapi-app:latest
 
       - name: Save Docker Image
         uses: actions/upload-artifact@v4
