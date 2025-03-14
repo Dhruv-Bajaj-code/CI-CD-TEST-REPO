@@ -62,3 +62,9 @@ jobs:
 
       - name: Run Container
         run: docker run -d -p 8000:8000 --name fastapi-container fastapi-app:latest
+
+      - name: Wait for FastAPI to start
+        run: sleep 5
+
+      - name: Run Health Check
+        run: curl --fail http://localhost:8000/health || exit 1
